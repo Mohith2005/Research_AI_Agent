@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Research Agent</h1>
+            <p>Automatically research any technical topic and generate professional presentations</p>
+        </header>
+
+        <main>
+            <div class="research-form">
+                <h2>Start Your Research</h2>
+                <form id="researchForm">
+                    <div class="form-group">
+                        <label for="topic">Enter a technical topic:</label>
+                        <input type="text" id="topic" name="topic" 
+                               placeholder="e.g., The future of quantum computing, AI in healthcare, Blockchain technology..." 
+                               required>
+                        <div class="char-count">
+                            <span id="charCount">0</span>/200 characters
+                        </div>
+                    </div>
+                    <button type="submit" id="researchBtn">
+                        <span>Start Research</span>
+                        <div class="loading-spinner" style="display: none;"></div>
+                    </button>
+                </form>
+            </div>
+
+            <div id="researchProgress" style="display: none;">
+                <h3>Research in Progress</h3>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progressMessage">Initializing research...</span>
+                    </div>
+                </div>
+                <div id="researchResults" style="display: none;"></div>
+            </div>
+
+            <div class="features">
+                <h2>How It Works</h2>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Web Search</h3>
+                        <p>Automatically searches reliable sources like Wikipedia, research papers, and tech publications</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI Analysis</h3>
+                        <p>Uses advanced AI to analyze and synthesize information from multiple sources</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📊</div>
+                        <h3>Presentation</h3>
+                        <p>Generates professional executive summaries with key findings and insights</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="examples">
+                <h2>Try These Examples</h2>
+                <div class="example-buttons">
+                    <button class="example-btn" data-topic="The future of quantum computing">Quantum Computing</button>
+                    <button class="example-btn" data-topic="AI in healthcare">AI in Healthcare</button>
+                    <button class="example-btn" data-topic="Renewable energy technology">Renewable Energy</button>
+                    <button class="example-btn" data-topic="Blockchain applications">Blockchain</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by AI Research Agent • Built with Flask & OpenAI</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
